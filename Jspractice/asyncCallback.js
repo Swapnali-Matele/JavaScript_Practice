@@ -13,4 +13,3 @@ function mySecond() {
 
 myFirst();
 mySecond();
-console.log(mySecond());
