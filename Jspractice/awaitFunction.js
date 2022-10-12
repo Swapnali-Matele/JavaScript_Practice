@@ -9,9 +9,13 @@ let stocks = {
 let is_shop_open = true;
 
 let topping_choice = ()=>{
-    return new promises((resolve, reject)=>{
+    return new Promise((resolve, reject)=>{
         setTimeout(()=>{
-            resolve(console.log('which topping would you love'));
+            if (is_shop_open){
+            resolve(console.log('which topping would you love'));}
+            else {
+                reject(console.log('Sorry,shop is not open'));
+            }
         
         }, 2000);
     });
