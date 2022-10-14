@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax</title>
+</head>
+<body>
+    <p id="demo">Here we load data</p>
+    <button onclick="loadData()">click</button>
+
+    <script>
+        function loadData() { 
+            console.log(" hello there")
+            var xyz = new XMLHttpRequest();
+            console.log(xyz)
+            xyz.onreadystatechange = function(){
+                console.log("hello")
+                //if(this.readystate == 400 && this.status == 200){
+                    console.log('redy to load');
+                    document.getElementById("demo").innerHTML = this.responseText;
+                //}
+            };
+
+        xyz.open('GET','./readme.txt', true);
+        xyz.send();
+        }
+    </script>
+</body>
+</html>
